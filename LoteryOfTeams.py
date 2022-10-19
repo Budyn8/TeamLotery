@@ -4,53 +4,53 @@ Exit=""
 while(Exit!="Exit"):
     e = 1
     while(e>0):
-        LiczbaGraczy = int(input('Wpisz Liczbę Graczy '))
-        if(LiczbaGraczy==0):
+        NumOfPlayers = int(input('Type in Number of Players '))
+        if(NumOfPlayers==0):
             exit()
-        LiczbaTeamów = int(input('Wpisz Liczbę Teamów '))
-        if(LiczbaTeamów==0):
+        NumOfTeams = int(input('Type in Number of Teams '))
+        if(NumOfTeams==0):
             exit()
-        LiczbaGraczyWTeamie = int(input('Wpisz Liczbę Graczy w Teamie '))
-        if(LiczbaGraczyWTeamie==0):
+        NumOfPlayersInTeam = int(input('Type in Number of Players w Teamie '))
+        if(NumOfPlayersInTeam==0):
             exit()
-        if(LiczbaGraczy>LiczbaTeamów*LiczbaGraczyWTeamie):
-            print("Liczba Graczy jest za duża lub ilość teamów jest za mała.")
+        if(NumOfPlayers>NumOfTeams*NumOfPlayersInTeam):
+            print("NumOf Players jest za duża lub ilość teamów jest za mała.")
         else:
-            if(LiczbaGraczy<LiczbaTeamów):
-              print("Liczba graczy nie może być większa od liczby teamów")
+            if(NumOfPlayers<NumOfTeams):
+              print("NumOf graczy nie może być większa od liczby teamów")
             else:
-                if(LiczbaGraczy<=LiczbaTeamów*LiczbaGraczyWTeamie and LiczbaGraczy>=LiczbaTeamów):
+                if(NumOfPlayers<=NumOfTeams*NumOfPlayersInTeam and NumOfPlayers>=NumOfTeams):
                   break
-    ListaGraczy=[]
+    ListaPlayers=[]
     i = 1
-    c = LiczbaTeamów
-    d = LiczbaGraczy
+    c = NumOfTeams
+    d = NumOfPlayers
     while(d%c != 0):
-        ListaGraczy+=[i]
+        ListaPlayers+=[i]
         d+=1
         if(d%c == 0):
             break
     while(i>0):
-         print('Wpisz ',i,' Gracza')
-         Gracz = [input()]
-         ListaGraczy += Gracz
+         print('Type in ',i,' Player')
+         Player = [input()]
+         ListaPlayers += Player
          i += 1
-         if(i>LiczbaGraczy):
+         if(i>NumOfPlayers):
             break
     a = 1
     b = 1
     while(a>0):
-         print(a,'Team to:')
+         print(a,'Team is:')
          while(b>0):
-          Gracz1 = random.choice(ListaGraczy)
-          ListaGraczy.remove(Gracz1)
-          print('-',Gracz1)
+          Player1 = random.choice(ListaPlayers)
+          ListaPlayers.remove(Player1)
+          print('-',Player1)
           b+=1
-          if(b>LiczbaGraczyWTeamie):
+          if(b>NumOfPlayersInTeam):
               break
-         b-=LiczbaGraczyWTeamie
+         b-=NumOfPlayersInTeam
          a+=1
-         if(a>LiczbaTeamów):
+         if(a>NumOfTeams):
              break
-    print("Jeśli chcesz wyjść Wpisz \"Exit\"")
+    print("If you want to leave Type "Exit"")
     Exit = input()
