@@ -10,30 +10,30 @@ while(Exit!="Exit"):
         NumOfTeams = int(input('Type in Number of Teams '))
         if(NumOfTeams==0):
             exit()
-        NumOfPlayersInTeam = int(input('Type in Number of Players w Teamie '))
+        NumOfPlayersInTeam = int(input('Type in Number of Players in Team '))
         if(NumOfPlayersInTeam==0):
             exit()
         if(NumOfPlayers>NumOfTeams*NumOfPlayersInTeam):
-            print("NumOf Players jest za duża lub ilość teamów jest za mała.")
+            print("Number of Players is too big or number of Teams is too small.")
         else:
             if(NumOfPlayers<NumOfTeams):
-              print("NumOf graczy nie może być większa od liczby teamów")
+              print("Number of Players can't be grater than number of teams")
             else:
                 if(NumOfPlayers<=NumOfTeams*NumOfPlayersInTeam and NumOfPlayers>=NumOfTeams):
                   break
-    ListaPlayers=[]
+    ListOfPlayers=[]
     i = 1
     c = NumOfTeams
     d = NumOfPlayers
     while(d%c != 0):
-        ListaPlayers+=[i]
+        ListOfPlayers+=[i]
         d+=1
         if(d%c == 0):
             break
     while(i>0):
          print('Type in ',i,' Player')
          Player = [input()]
-         ListaPlayers += Player
+         ListOfPlayers += Player
          i += 1
          if(i>NumOfPlayers):
             break
@@ -42,8 +42,8 @@ while(Exit!="Exit"):
     while(a>0):
          print(a,'Team is:')
          while(b>0):
-          Player1 = random.choice(ListaPlayers)
-          ListaPlayers.remove(Player1)
+          Player1 = random.choice(ListOfPlayers)
+          ListOfPlayers.remove(Player1)
           print('-',Player1)
           b+=1
           if(b>NumOfPlayersInTeam):
