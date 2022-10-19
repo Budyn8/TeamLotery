@@ -1,5 +1,5 @@
 import random
-print("Jeśli chcesz wyjść wpisz 0 w któryś z ramek na liczby")
+print("If you want to exit type 0 in any of number inputs")
 Exit=""
 while(Exit!="Exit"):
     e = 1
